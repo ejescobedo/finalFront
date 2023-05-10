@@ -1,0 +1,51 @@
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-plain">
+        <div class="card-header">Google Maps</div>
+        <div>
+          <label for="locations">Select a location: </label>
+          <select id="locations" (change)="onLocationChange($event)">
+            <option *ngFor="let location of locations" [value]="location.id">{{ location.name }}</option>
+          </select>
+        </div>
+        <div style="width: 100%;
+        height: 602px;" class="card-body">
+          <agm-map
+            style="width:100%; height:100%;"
+            [latitude]="lat" 
+            [longitude]="lng" 
+            [zoom]="zoom" 
+            [zoomControl]="false" 
+            [scrollwheel]="false" 
+            [disableDoubleClickZoom]="true" 
+            [mapDraggable]="false" 
+            (mapClick)="onMapClick($event)" 
+            (mapReady)="onMapReady($event)"
+          >
+            <agm-marker
+              *ngFor="let marker of markers"
+              [latitude]="marker.lat"
+              [longitude]="marker.lng"
+            ></agm-marker>
+            <agm-polyline [strokeColor]="'blue'" [strokeOpacity]="0.7" [strokeWeight]="3">
+              <agm-polyline-point *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [draggable]="marker.draggable" (dragEnd)="onMarkerDragEnd(i, $event)"></agm-polyline-point>
+            </agm-polyline>
+          </agm-map>
+          <app-loader *ngIf="isLoading"></app-loader>
+        </div>
+        
+      </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+    <button class="btn btn-danger btn-block" (click)="generateFlightPlan()">Generate Flight Plan</button>
+      </div>
+      <div class="col-md-6">
+    <button class="btn btn-danger btn-block"  (click)="executeFlight()">Execute Flight</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

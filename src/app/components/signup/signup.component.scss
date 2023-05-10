@@ -1,0 +1,39 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .form-label {
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+    
+    input {
+      max-width: 400px;
+      width: 100%;
+      font-size: 1.2em;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      font-size: 1.2em;
+      padding: 10px 30px;
+      border-radius: 5px;
+      background-color: #2196f3;
+      color: #fff;
+      cursor: pointer;
+      
+      &:hover {
+        background-color: #0c7cd5;
+      }
+      
+      &:active {
+        background-color: #005cbf;
+      }
+    }
+  }
+  
+  

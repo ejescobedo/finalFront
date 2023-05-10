@@ -1,0 +1,37 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+  <label class="input-label">NarcDrone Login Page</label>
+  <div>
+    <img src="/assets/img/utep.png" alt="UTEP logo" class="logo">
+  </div>
+  <div>
+    <label class="input-label">Email</label>
+    <input matInput formControlName="email" />
+
+  </div>
+
+  <div>
+    <label class="input-label">
+      Password
+    </label>
+    <input
+      matInput
+      type="password"
+      placeholder="7 characters or longer"
+      formControlName="password"/>
+  </div>
+
+  <button
+    color="accent"
+    [disabled]="!loginForm.valid"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Log in</span>
+  </button>
+
+  <div style="text-align: left; margin-top: 20px;">
+    <div style="margin-top: 10px;" class="col-sm-12">
+      <a href="/#/signup">New account</a>
+    </div>
+  </div>
+</form>

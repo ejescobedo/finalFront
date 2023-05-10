@@ -1,0 +1,64 @@
+<<<div class=" content">
+
+<form [formGroup]="dataForm" (ngSubmit)="searchByName()" novalidate>
+  <div>
+    <label class="input-label">Location name</label>
+    <input matInput formControlName="name" />
+  
+  </div>
+  
+  <button
+    color="accent"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Search</span>
+  </button>
+</form>
+
+<form [formGroup]="dataForm" (ngSubmit)="searchByDay()" novalidate>
+  <div>
+    <label class="input-label">Day</label>
+    <input matInput formControlName="day" />
+  
+  </div>
+  
+  <button
+    color="accent"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Search</span>
+  </button>
+</form>
+
+<form [formGroup]="dataForm" (ngSubmit)="searchByTime()" novalidate>
+  <div>
+    <label class="input-label">Time</label>
+    <input matInput formControlName="time" />
+  
+  </div>
+  
+  <button
+    color="accent"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Search</span>
+  </button>
+</form>
+
+<!--
+<div style="text-align: left; margin-top: 20px;">
+  <div style="margin-top: 10px;" class="col-sm-12">
+    <a href="/#/display">See Data</a>
+  </div>
+</div>
+-->
+
+<div *ngFor="let record of records">
+  <p>Name: {{record.name}}  - Latitude: {{record.latitude}}  - Longitude: {{record.longitude}}  - Day: {{record.day}}  - Time: {{record.time}}  - People: {{record.people}}</p>
+</div>
+
+</div>
+>>

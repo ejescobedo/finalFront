@@ -1,0 +1,39 @@
+<div>
+    <span>
+      <a routerLink="/">
+        <span>Social Posts</span>
+      </a>
+    </span>
+    <span>
+      <a
+        *ngIf=""
+        routerLinkActive="active-link"
+        routerLink="/posts"
+      >
+        <span>Posts</span>
+      </a>
+      <a
+        *ngIf=""
+        routerLinkActive="active-link"
+        routerLink="/login"
+      >
+        <span>Login</span>
+      </a>
+      <a
+        *ngIf=""
+        (click)="logout()"
+        routerLinkActive="active-link"
+        routerLink="/login"
+      >
+        <span>Logout</span>
+      </a>
+      <a
+        *ngIf=""
+        routerLinkActive="active-link"
+        routerLink="/signup"
+      >
+        <span>Signup</span>
+      </a>
+    </span>
+</div>
+ 

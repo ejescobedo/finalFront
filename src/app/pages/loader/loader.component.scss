@@ -1,0 +1,71 @@
+.full-screen-loader {
+    background-color: rgba(11, 11, 56, .8);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: space-evenly;
+}
+
+.animation{
+
+
+
+}
+
+  
+  svg {
+    display: block;
+    height: 200px;
+    fill: white;
+    width: 100%; 
+
+      position: relative;
+      transform: translateY(60%);
+  }
+  
+  
+  
+  .beam {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    &--1 { animation-name: inout1; }
+    &--2 { animation-name: inout2; }
+  }
+  
+  .zaps {
+    animation-name: inout3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  
+  
+  @keyframes inout1 {
+    0%    { opacity: 0; }
+    5%    { opacity: 0; }
+    30%   { opacity: 1; }
+    80%   { opacity: 1; }
+    95%   { opacity: 0; }
+    100%  { opacity: 0; }
+  }
+  @keyframes inout2 {
+    0%    { opacity: 0; }
+    15%   { opacity: 0; }
+    40%   { opacity: 1; }
+    60%   { opacity: 1; }
+    85%   { opacity: 0; }
+    100%  { opacity: 0; }
+  }
+  @keyframes inout3 {
+    0%    { opacity: 0; }
+    25%   { opacity: 0; }
+    50%   { opacity: 1; }
+    75%   { opacity: 0; }
+    100%  { opacity: 0; }
+  }
+  
+  
