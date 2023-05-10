@@ -1,13 +1,16 @@
-export interface FlightPlanCommand {
+export interface flightplan {
   latitude: number;
-  longitude:number;
+  longitude: number;
   altitude: number;
-  }
-  
-  export interface FlightPlan {
-    id: number;
-    LocationID: number;
-    FlightPlanJSON: FlightPlanCommand[];
-    name: string;
-    
-  }
+}
+
+export interface FlightPlanObject {
+  flightplan: flightplan[];
+}
+
+export interface FlightPlanLocation {
+  id: number;
+  LocationID: number;
+  FlightPlanJSON: flightplan[];
+  name: string;
+}
