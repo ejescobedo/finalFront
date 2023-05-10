@@ -12,7 +12,7 @@ export class MapService {
   constructor(private httpClient: HttpClient) {}
 
   getLocations(): Observable<Location[]> {
-    var apiUrl = 'http://129.153.95.231:8080/locations';
+    var apiUrl = 'http://127.0.0.1:5000/locations';
     return this.httpClient.get<Location[]>(apiUrl).pipe(
       map(locations =>
         locations.map(location => ({

@@ -1,0 +1,11 @@
+a {
+    color: white; /* text color */
+    padding: 8px 16px; /* add padding */
+    border: 2px solid white; /* add white border */
+  }
+  
+  a:hover {
+    background-color: #333; /* change background color on hover */
+    color: #fff; /* change text color on hover */
+  }
+  
