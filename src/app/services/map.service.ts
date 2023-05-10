@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Location } from '../models/location';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { FlightPlan, FlightPlanCommand } from '../models/flight-plan.model';
+import { flightplan, FlightPlanObject} from '../models/flight-plan.model';
 
 @Injectable({
   providedIn: 'root',
@@ -26,21 +26,21 @@ export class MapService {
     );
   }
 
-  getPaths(id: number): Observable<FlightPlan[]> {
-    var apiUrl = `http://127.0.0.1:5000/paths/${id}`;
-    return this.httpClient.get<FlightPlan[]>(apiUrl).pipe(
-      map(paths =>
-        paths.map(path => ({
-          id: path.id,
-          LocationID: path.LocationID,
-          FlightPlanJSON: path.FlightPlanJSON.map((command: FlightPlanCommand) => ({
-            latitude: command.latitude,
-            longitude: command.longitude,
-            altitude: command.altitude,
-          })),
-          name: path.name,
-        })),
-      ),
-    );
-  }
+  // getPaths(id: number): Observable<FlightPlan[]> {
+  //   var apiUrl = `http://127.0.0.1:5000/paths/${id}`;
+  //   return this.httpClient.get<FlightPlan[]>(apiUrl).pipe(
+  //     map(paths =>
+  //       paths.map(path => ({
+  //         id: path.id,
+  //         LocationID: path.LocationID,
+  //         FlightPlanJSON: path.FlightPlanJSON.map((command: FlightPlanCommand) => ({
+  //           latitude: command.latitude,
+  //           longitude: command.longitude,
+  //           altitude: command.altitude,
+  //         })),
+  //         name: path.name,
+  //       })),
+  //     ),
+  //   );
+  // }
 }
